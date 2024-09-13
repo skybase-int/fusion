@@ -106,7 +106,7 @@ jobs:
           CLUSTER_NAME: ${{ vars.CLUSTER_NAME  }}
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY  }}
           ECR_REPO_NAME: ${{ env.ECR_REPO_NAME }}
-          ENDPOINT: ${{ vars.APP_NAME }}.${{ secrets.DOMAIN_NAME }}
+          ENDPOINT: ${{ vars.APP_NAME }}-${{ vars.ENV }}.${{ secrets.DOMAIN_NAME }}
           HELM_VALUES: ${{ env.HELM_VALUES }}
           IMAGE_TAG: ${{ ( contains(github.event.head_commit.message, '[skip build]') || github.event.inputs.skip_build ) && 'latest' || needs.setup.outputs.short_sha }} # If the build was skipped, use the `latest` image
           ROLE_SESSION_NAME: ${{ env.ROLE_SESSION_NAME }}
