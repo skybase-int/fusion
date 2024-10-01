@@ -5,9 +5,9 @@ import Card from '@/components/Card/Card';
 import FancyTabs from '@/components/FancyTabs/FancyTabs';
 import ShadowWrapper from '@/components/FancyTabs/ShadowWrapper';
 import type { Team } from '@/core/models/interfaces/team';
-import ContributorsItem from './ContributorsItem';
-import TabDescriptions from './TabDescriptions';
-import { useContributorsSection } from './useContributorsSection';
+import ContributorsItem from '@/views/Home/components/Contributors/ContributorsItem';
+import TabDescriptions from '@/views/Home/components/Contributors/TabDescriptions';
+import { useContributorsSection } from '@/views/Home/components/Contributors/useContributorsSection';
 import type { FC } from 'react';
 
 interface Props {
@@ -27,7 +27,10 @@ const ContributorsSection: FC<Props> = ({ teams }) => {
     teamCategoryDataMock,
     contributors,
     textDefault,
+    sizeScopeMediumSmall,
+    customStylesHomeView,
   } = useContributorsSection(teams);
+
   return (
     <Container>
       <TabsDescriptions>
@@ -66,6 +69,8 @@ const ContributorsSection: FC<Props> = ({ teams }) => {
                       contributor={contributor}
                       hasDefaultColors={hasDefaultColors}
                       textDefault={textDefault}
+                      sizeScope={sizeScopeMediumSmall}
+                      customStyles={customStylesHomeView}
                     />
                   ))}
                 </ContainerContributors>
