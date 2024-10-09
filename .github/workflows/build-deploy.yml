@@ -70,6 +70,7 @@ jobs:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY  }}
           ECR_REPO_NAME: ${{ env.ECR_REPO_NAME }}
           NEXT_PUBLIC_GRAPHQL_ENDPOINT: ${{ secrets.NEXT_PUBLIC_GRAPHQL_ENDPOINT }}
+          NEXT_PUBLIC_GA_TRACKING_ID: ${{ secrets.NEXT_PUBLIC_GA_TRACKING_ID }}
           ROLE_SESSION_NAME: ${{ env.ROLE_SESSION_NAME }}
           ROLE_TO_ASSUME: ${{ secrets.GA_OIDC_EKS_ROLE_ARN }}
           SHA_TAG: ${{ needs.setup.outputs.short_sha }}

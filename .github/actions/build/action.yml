@@ -29,6 +29,10 @@ inputs:
     description: 'The GraphQL endpoint'
     required: true
     default: ''
+  NEXT_PUBLIC_GA_TRACKING_ID:
+    description: 'The Google Analytics tracking ID'
+    required: true
+    default: ''
 
 runs:
   using: 'composite'
@@ -61,3 +65,4 @@ runs:
         provenance: false
         build-args:
           NEXT_PUBLIC_GRAPHQL_ENDPOINT=${{ inputs.NEXT_PUBLIC_GRAPHQL_ENDPOINT }}
+          NEXT_PUBLIC_GA_TRACKING_ID=${{ inputs.NEXT_PUBLIC_GA_TRACKING_ID }}
