@@ -1,17 +1,9 @@
 import { styled, useMediaQuery } from '@mui/material';
-import { LinkButton } from '@ses/components/LinkButton/LinkButton';
-import { siteRoutes } from '@ses/config/routes';
-import { ButtonType } from '@ses/core/enums/buttonTypeEnum';
-import {
-  isProject,
-  isSupportedProjects,
-  type Project,
-  type SupportedProjects,
-} from '@ses/core/models/interfaces/projects';
+import { isProject, type Project, type SupportedProjects } from '@ses/core/models/interfaces/projects';
 import Image from 'next/image';
 import React, { useMemo } from 'react';
 import ProgressWithStatus from '@/components/ProgressWithStatus/ProgressWithStatus';
-import type { Deliverable } from '@/core/models/interfaces/deliverables';
+import type { Deliverable, KeyResult } from '@/core/models/interfaces/deliverables';
 import type { OwnerRef } from '@/core/models/interfaces/roadmaps';
 import type { ProgressStatus } from '@/core/models/interfaces/types';
 import BudgetTypeBadge from '../BudgetTypeBadge/BudgetTypeBadge';
@@ -65,9 +57,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     if (isProject(project)) {
       return deliverable;
     }
+
     return {
       ...deliverable,
-      keyResults: project.supportedKeyResults?.filter((keyResult) => keyResult.parentIdRef === deliverable.id) ?? [],
+      keyResults:
+        // The eslint disable is necessary because the API returns both keyResults and supportedKeyResults
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ((project.supportedDeliverables.find((support) => support.id === deliverable.id) as any)
+          ?.supportedKeyResults as KeyResult[]) || [],
     };
   };
 
@@ -100,13 +97,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                     status={project.status as unknown as ProgressStatus}
                   />
 
-                  {isSupportedProjects(project) && (
-                    <ViewEcosystem
-                      href={siteRoutes.ecosystemActorAbout(project.projectOwner.code ?? '')}
-                      buttonType={ButtonType.Default}
-                      label="View Ecosystem Actor"
-                    />
-                  )}
                   <ProjectParticipants project={project} supporters={supporters} isShowName={isUpDesktop1280} />
                 </ContainerStatusRole>
               </ContainerStatusRoleDescription>
@@ -353,29 +343,6 @@ const DeliverablesContainer = styled('div')(({ theme }) => ({
     '& > *': {
       maxWidth: 'calc(33% - 18px)',
     },
-  },
-}));
-
-const ViewEcosystem = styled(LinkButton)(({ theme }) => ({
-  borderColor: theme.palette.isLight ? '#D4D9E1' : '#708390',
-  borderRadius: '22px',
-  fontFamily: 'Inter, sans serif',
-  fontStyle: 'normal',
-  padding: '7px 23px',
-
-  '& > div': {
-    color: theme.palette.isLight ? '#31424E' : '#ADAFD4',
-    fontWeight: 500,
-    fontSize: 14,
-    lineHeight: '18px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  '&:hover': {
-    background: theme.palette.isLight ? '#F6F8F9' : '#10191F',
-    border: `1px solid ${theme.palette.isLight ? '#ECF1F3' : '#1E2C37'}`,
   },
 }));
 
