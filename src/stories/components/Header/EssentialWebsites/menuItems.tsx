@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from '../../svg/logo';
-import MakerBurn from '../../svg/maker-burn';
 import Makerdao from '../../svg/makerdao';
 import MipsPortal from '../../svg/mips-portal';
 import VotingPortal from '../../svg/voting-portal';
@@ -29,18 +28,18 @@ export type WebSiteLinks = {
 
 export const itemsWebSiteLinks: WebSiteLinks[] = [
   {
-    title: 'makerburn.com',
-    description: 'Easily view onchain data that surfaces key protocol health metrics.',
-    logo: <MakerBurn />,
+    title: 'Sky Ecosystem Dashboard',
+    description: 'Track core protocol metrics across the Sky Ecosystem in one place.',
+    logo: <Logo width={48} height={24.71} fillDark="#FFFFFF" />,
     color: '#000000',
     colorDark: '#FFFFFF',
     fontFamily: 'Cantarell,sans-serif',
     lineHeight: '26px',
     fontSize: 18,
     fontWeight: 500,
-    link: 'https://makerburn.com/#/',
+    link: 'https://info.sky.money/',
     marginBottom: '32px',
-    id: 'MakerBurn',
+    id: 'SkyEcosystemDashboard',
   },
   {
     title: 'Forum',

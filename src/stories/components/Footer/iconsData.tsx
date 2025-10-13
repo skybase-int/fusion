@@ -146,8 +146,8 @@ export const products = [
     url: 'https://migrate.makerdao.com/',
   },
   {
-    title: 'MakerBurn',
-    url: 'https://makerburn.com/#/',
+    title: 'Sky Ecosystem Dashboard',
+    url: 'https://info.sky.money/',
   },
   {
     title: 'DAI Stats',
