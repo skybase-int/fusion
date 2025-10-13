@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 
-import { MAKER_BURN_LINK } from '@ses/core/utils/const';
+import { SKY_ECOSYSTEM_DASHBOARD_LINK } from '@ses/core/utils/const';
 
 import React from 'react';
 import ExternalLinkButton from '@/components/ExternalLinkButton/ExternalLinkButton';
@@ -16,8 +16,8 @@ const CuHeadlineText: React.FC<CuHeadlineTextProps> = ({ cuLongCode, isCoreUnit 
   const resource = isCoreUnit ? 'Core Unit' : 'Ecosystem Actor';
   return (
     <LinkDescription className={className}>
-      <ExternalLinkButtonStyled href={`${MAKER_BURN_LINK}/${cuLongCode}`} wrapText={false}>
-        {`${shortCode} ${resource} on-chain transaction history`}
+      <ExternalLinkButtonStyled href={SKY_ECOSYSTEM_DASHBOARD_LINK} wrapText={false}>
+        Sky Ecosystem Dashboard
       </ExternalLinkButtonStyled>
     </LinkDescription>
   );

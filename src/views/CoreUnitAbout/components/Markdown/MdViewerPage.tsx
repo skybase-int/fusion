@@ -54,7 +54,6 @@ const MdViewerPage = ({
             budgetPath={budgetPath}
             queryStrings={queryStrings}
             shortCode={shortCode}
-            code={code}
             type={type}
           />
         </ContainerResponsive>

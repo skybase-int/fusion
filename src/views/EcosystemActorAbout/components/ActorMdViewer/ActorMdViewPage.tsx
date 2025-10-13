@@ -63,7 +63,6 @@ const ActorMdViewPage = ({
               <CustomSheetProjects shortCode={shortCode} />
               <CustomSheetFinances
                 budgetPath={budgetPath}
-                code={code}
                 shortCode={shortCode}
                 queryStrings={queryStrings}
                 type={ResourceType.EcosystemActor}
@@ -88,7 +87,6 @@ const ActorMdViewPage = ({
                 isTitlePresent={isEnabled('FEATURE_TEAM_PROJECTS')}
                 titleCard={`View all expenses of the ${actorName} Ecosystem Actor.`}
                 auditorMessage={`The ${actorName} is working without auditor.`}
-                makerburnCustomMessage={`View On-Chain transfers to ${actorName} on makerburn.com`}
                 budgetPath={budgetPath}
                 showMakerburnLink={false}
               />

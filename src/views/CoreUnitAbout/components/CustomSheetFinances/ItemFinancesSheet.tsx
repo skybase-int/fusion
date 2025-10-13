@@ -6,7 +6,7 @@ import InternalLinkButton from '@/components/InternalLinkButton/InternalLinkButt
 import { siteRoutes } from '@/config/routes';
 import type { AuditorDto } from '@/core/models/dto/coreUnitDTO';
 import { ResourceType } from '@/core/models/interfaces/types';
-import { MAKER_BURN_LINK } from '@/core/utils/const';
+import { SKY_ECOSYSTEM_DASHBOARD_LINK } from '@/core/utils/const';
 import Auditors from '@/views/EcosystemActorAbout/components/Auditors/Auditors';
 import type { FC } from 'react';
 
@@ -15,7 +15,6 @@ interface Props {
   budgetPath: string;
   shortCode: string;
   queryStrings: string;
-  code: string;
   type: ResourceType;
   auditors?: AuditorDto[];
   auditorTitle?: string;
@@ -24,7 +23,6 @@ interface Props {
 const ItemFinancesSheet: FC<Props> = ({
   className,
   budgetPath,
-  code,
   queryStrings,
   shortCode,
   type,
@@ -52,7 +50,7 @@ const ItemFinancesSheet: FC<Props> = ({
         {type === ResourceType.CoreUnit && (
           <ContainerLinks>
             <LabelLinks>Important Links</LabelLinks>
-            <ButtonLinkStyled href={`${MAKER_BURN_LINK}/${code}`}>Makerburn</ButtonLinkStyled>
+            <ButtonLinkStyled href={SKY_ECOSYSTEM_DASHBOARD_LINK}>Sky Ecosystem Dashboard</ButtonLinkStyled>
           </ContainerLinks>
         )}
         {type === ResourceType.EcosystemActor ? (

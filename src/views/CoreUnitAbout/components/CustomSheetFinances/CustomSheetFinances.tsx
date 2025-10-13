@@ -12,7 +12,6 @@ interface Props {
   budgetPath: string;
   shortCode: string;
   queryStrings: string;
-  code: string;
   type: ResourceType;
   auditors?: AuditorDto[];
   auditorTitle?: string;
@@ -23,7 +22,6 @@ const CustomSheetFinances: FC<Props> = ({
   budgetPath,
   queryStrings,
   shortCode,
-  code,
   type,
   auditors,
   auditorTitle,
@@ -48,7 +46,6 @@ const CustomSheetFinances: FC<Props> = ({
       >
         <ItemFinancesSheet
           budgetPath={budgetPath}
-          code={code}
           queryStrings={queryStrings}
           shortCode={shortCode}
           type={type}

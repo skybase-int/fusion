@@ -5,7 +5,7 @@ import Card from '@/components/Card/Card';
 import ExternalLinkButton from '@/components/ExternalLinkButton/ExternalLinkButton';
 import InternalLinkButton from '@/components/InternalLinkButton/InternalLinkButton';
 import SESTooltip from '@/components/SESTooltip/SESTooltip';
-import { MAKERBURN_URL } from '@/config/externalUrls';
+import { SKY_ECOSYSTEM_DASHBOARD_URL } from '@/config/externalUrls';
 import { siteRoutes } from '@/config/routes';
 import FinancesBarChart from '@/views/Home/components/FinancesBarChart/FinancesBarChart';
 import type { RevenueAndSpendingRecords } from '../../api/revenueAndSpending';
@@ -118,8 +118,8 @@ const FinancesBarChartCard: FC<FinancesBarChartCardProps> = ({ revenueAndSpendin
         </Legends>
       </FinancesBarChartContainer>
       <LinkButtons>
-        <StyledExternalLinkButton href={MAKERBURN_URL} wrapText={false}>
-          makerburn.com
+        <StyledExternalLinkButton href={SKY_ECOSYSTEM_DASHBOARD_URL} wrapText={false}>
+          Sky Ecosystem Dashboard
         </StyledExternalLinkButton>
         <InternalLinkButton href={siteRoutes.finances()} buttonType="primary" label="Details" />
       </LinkButtons>

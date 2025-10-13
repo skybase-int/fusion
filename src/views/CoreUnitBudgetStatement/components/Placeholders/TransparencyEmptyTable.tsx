@@ -4,7 +4,7 @@ import { LinkButton } from '@ses/components/LinkButton/LinkButton';
 import { useThemeContext } from '@ses/core/context/ThemeContext';
 import { ButtonType } from '@ses/core/enums/buttonTypeEnum';
 import { ResourceType } from '@ses/core/models/interfaces/types';
-import { MAKER_BURN_LINK } from '@ses/core/utils/const';
+import { SKY_ECOSYSTEM_DASHBOARD_LINK } from '@ses/core/utils/const';
 import lightTheme from '@ses/styles/theme/themes';
 import React from 'react';
 
@@ -296,16 +296,12 @@ export const TransparencyEmptyTable: React.FC<TransparencyEmptyTableProps> = ({
         <ContainerIndications>
           <Title>{title}</Title>
 
-          <Description>View On-Chain transfers on makerburn.com </Description>
+          <Description>Explore on-chain activity on the Sky Ecosystem Dashboard</Description>
 
           <ContainerButton>
             <LinkButton
-              href={
-                resource === ResourceType.Delegates
-                  ? 'https://makerburn.com/#/expenses/core-units/DELEGATES'
-                  : `${MAKER_BURN_LINK}/${longCode}`
-              }
-              label="Go to Makerburn"
+              href={SKY_ECOSYSTEM_DASHBOARD_LINK}
+              label="Open Sky Ecosystem Dashboard"
               styleText={{
                 fontSize: '16px',
                 lineHeight: '19px',
@@ -453,15 +449,11 @@ export const TransparencyEmptyTable: React.FC<TransparencyEmptyTableProps> = ({
         <ContainerIndications>
           <TitleMobile>{title}</TitleMobile>
 
-          <Description>View On-Chain transfers on makerburn.com </Description>
+          <Description>Explore on-chain activity on the Sky Ecosystem Dashboard</Description>
           <ContainerButton>
             <LinkButton
-              href={
-                resource === ResourceType.Delegates
-                  ? 'https://makerburn.com/#/expenses/core-units/DELEGATES'
-                  : `${MAKER_BURN_LINK}/${longCode}`
-              }
-              label="Go to Makerburn"
+              href={SKY_ECOSYSTEM_DASHBOARD_LINK}
+              label="Open Sky Ecosystem Dashboard"
               styleText={{
                 fontSize: '16px',
                 lineHeight: '19px',

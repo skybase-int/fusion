@@ -5,7 +5,7 @@ import React from 'react';
 import ExternalLinkButton from '@/components/ExternalLinkButton/ExternalLinkButton';
 import InternalLinkButton from '@/components/InternalLinkButton/InternalLinkButton';
 import Auditors from '@/views/EcosystemActorAbout/components/Auditors/Auditors';
-import { MAKER_BURN_LINK } from '../../../../core/utils/const';
+import { SKY_ECOSYSTEM_DASHBOARD_LINK } from '../../../../core/utils/const';
 import InformationCard from './InformationCard';
 import type { AuditorDto } from '../../../../core/models/dto/coreUnitDTO';
 
@@ -19,14 +19,12 @@ interface Props {
   queryStrings: string;
   titleCard?: string;
   auditorMessage?: string;
-  makerburnCustomMessage?: string;
   showMakerburnLink?: boolean;
   budgetPath: string;
   className?: string;
 }
 
 const CardExpenses = ({
-  code,
   shortCode,
   resource = ResourceType.CoreUnit,
   auditors,
@@ -71,7 +69,7 @@ const CardExpenses = ({
       {showMakerburnLink ? (
         <ContainerLinks>
           <LabelLinks>Important Links</LabelLinks>
-          <ButtonLinkStyled href={`${MAKER_BURN_LINK}/${code}`}>Makerburn</ButtonLinkStyled>
+          <ButtonLinkStyled href={SKY_ECOSYSTEM_DASHBOARD_LINK}>Sky Ecosystem Dashboard</ButtonLinkStyled>
         </ContainerLinks>
       ) : (
         <div />

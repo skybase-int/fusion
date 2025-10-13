@@ -7,7 +7,7 @@ import Empty from 'public/assets/img/no-data-provide.png';
 import ExternalLinkButton from '@/components/ExternalLinkButton/ExternalLinkButton';
 import { useThemeContext } from '@/core/context/ThemeContext';
 import { ResourceType } from '@/core/models/interfaces/types';
-import { MAKER_BURN_LINK } from '@/core/utils/const';
+import { SKY_ECOSYSTEM_DASHBOARD_LINK } from '@/core/utils/const';
 
 interface Props {
   longCode: string;
@@ -50,17 +50,11 @@ const BudgetStatementsPlaceholder: React.FC<Props> = ({
       {isNotLoading && (
         <ContainerDescription>
           <Title>{titleStory || title}</Title>
-          <Description>View On-Chain Transfers on makerburn.com</Description>
+          <Description>Explore on-chain analytics on the Sky Ecosystem Dashboard</Description>
 
           <ContainerButton>
-            <ExternalLinkButtonStyled
-              href={
-                resource === ResourceType.Delegates
-                  ? 'https://makerburn.com/#/expenses/core-units/DELEGATES'
-                  : `${MAKER_BURN_LINK}/${longCode}`
-              }
-            >
-              Go To Makerburn
+            <ExternalLinkButtonStyled href={SKY_ECOSYSTEM_DASHBOARD_LINK}>
+              Open Sky Ecosystem Dashboard
             </ExternalLinkButtonStyled>
           </ContainerButton>
         </ContainerDescription>

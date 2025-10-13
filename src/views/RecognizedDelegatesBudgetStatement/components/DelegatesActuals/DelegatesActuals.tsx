@@ -26,8 +26,8 @@ const DelegatesActuals: FC<Props> = ({ currentMonth, budgetStatement }) => {
     <Container>
       {currentBudgetStatement && (
         <TransactionLink
-          href="https://makerburn.com/#/expenses/core-units/DELEGATES"
-          text="Onchain transactions for Recognized Delegates"
+          href="https://info.sky.money/"
+          text="Sky Ecosystem Dashboard — Recognized Delegates overview"
         />
       )}
       <TotalsMonth>{currentMonth.toFormat('MMM yyyy')} Totals</TotalsMonth>

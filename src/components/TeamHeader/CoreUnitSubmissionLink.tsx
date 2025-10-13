@@ -17,8 +17,8 @@ interface CoreUnitSubmissionLinkProps {
 const CoreUnitSubmissionLink: React.FC<CoreUnitSubmissionLinkProps> = ({ team }) => {
   if (team.type === ResourceType.Delegates) {
     return (
-      <SinceDateCoreUnit href="https://makerburn.com/#/expenses/core-units/DELEGATES">
-        Onchain Transactions
+      <SinceDateCoreUnit href="https://info.sky.money/">
+        Sky Ecosystem Dashboard
       </SinceDateCoreUnit>
     );
   } else {

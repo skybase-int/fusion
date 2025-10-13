@@ -109,7 +109,6 @@ export const EcosystemActorAboutView: React.FC<Props> = ({ actors, actor }) => {
                   auditors={actor.auditors}
                   titleCard={`View all expenses of the ${actor.name} Ecosystem Actor.`}
                   auditorMessage={`${actor.name} is working without auditor.`}
-                  makerburnCustomMessage={`View On-Chain transfers to ${actor.name} on makerburn.com`}
                   budgetPath={removeDuplicateNamesBudgetPath}
                 />
               </ContainerCard>
