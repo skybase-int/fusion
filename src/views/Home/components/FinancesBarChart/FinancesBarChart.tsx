@@ -38,13 +38,13 @@ const FinancesBarChart: FC<FinancesBarChartProps> = ({ revenueAndSpendingData })
       .sort((a, b) => Number(a) - Number(b));
 
     years.forEach((year) => {
-      const record = revenueAndSpendingData[year];
-      series.psm.push(record.psm);
-      series.liquidationIncome.push(record.liquidationIncome);
-      series.fees.push(record.fees);
-      series.dsr.push(record.dsr);
-      series.mkrVesting.push(record.mkrVesting);
-      series.daiSpent.push(record.daiSpent);
+      const record = revenueAndSpendingData[year] ?? {};
+      series.psm.push(record.psm ?? 0);
+      series.liquidationIncome.push(record.liquidationIncome ?? 0);
+      series.fees.push(record.fees ?? 0);
+      series.dsr.push(record.dsr ?? 0);
+      series.mkrVesting.push(record.mkrVesting ?? 0);
+      series.daiSpent.push(record.daiSpent ?? 0);
     });
 
     return {
